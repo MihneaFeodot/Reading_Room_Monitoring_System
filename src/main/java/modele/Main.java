@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("--- Testare Sistem Monitorizare Sali de Lectura ---\n");
+        System.out.println("Testare Sistem Monitorizare Sali de Lectura \n");
 
         // 1. Creare si testare Sali de Lectura si Dotari
         System.out.println("1. TESTARE SALI SI DOTARI");
