@@ -47,8 +47,7 @@ class CreareRezervareTest {
     @Test
     void testRezervare_SalaOcupata() {
         // Sistemul interogheaza disponibilitatea – sala e ocupata
-        assertFalse(salaOcupata.verificaDisponibilitate(),
-                "Sala trebuie sa fie marcata ca INDISPONIBILA.");
+        assertFalse(salaOcupata.verificaDisponibilitate(), "Sala trebuie sa fie marcata ca INDISPONIBILA.");
 
         // Clientul este autentificat
         client.login("ion@mail.ro", "parola123");
@@ -68,10 +67,7 @@ class CreareRezervareTest {
 
         // Simuleaza bucla: prima sala e ocupata, a doua e libera
         List<Sala_De_Lectura> sali = List.of(salaOcupata, salaLibera);
-        Sala_De_Lectura salaAleasa = sali.stream()
-                .filter(Sala_De_Lectura::isDisponibilitate)
-                .findFirst()
-                .orElse(null);
+        Sala_De_Lectura salaAleasa = sali.stream().filter(Sala_De_Lectura::isDisponibilitate).findFirst().orElse(null);
 
         assertNotNull(salaAleasa, "Trebuie gasita o sala libera dupa re-selectare.");
         assertEquals("Sala Eminescu", salaAleasa.getDenumire());
